@@ -30,14 +30,12 @@ public class UserController {
     }
 
     @ApiOperation(value="创建用户", notes="创建用户")
-
     @RequestMapping(value="", method=RequestMethod.POST)
     public User postUser(@RequestBody User user) {
-      return   userService.saveUser(user);
-
+      return userService.saveUser(user);
     }
-    @ApiOperation(value="获用户细信息", notes="根据url的id来获取详细信息")
 
+    @ApiOperation(value="获用户细信息", notes="根据url的id来获取详细信息")
     @RequestMapping(value="/{id}", method=RequestMethod.GET)
     public User getUser(@PathVariable Long id) {
         return userService.findUserById(id);
@@ -51,8 +49,8 @@ public class UserController {
         user1.setPassword(user.getPassword());
         user1.setId(id);
        return userService.updateUser(user1);
-
     }
+
     @ApiOperation(value="删除用户", notes="根据url的id来指定删除用户")
     @RequestMapping(value="/{id}", method=RequestMethod.DELETE)
     public String deleteUser(@PathVariable Long id) {
@@ -66,14 +64,10 @@ public class UserController {
         return " hi you!";
     }
 
-
-
 //    @GetMapping("/{username}")
 //    public User getUser(@PathVariable("username")String username){
 //       return userService.findUserByName(username);
 //
 //    }
-
-
 
 }

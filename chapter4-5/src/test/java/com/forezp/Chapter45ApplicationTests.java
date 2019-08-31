@@ -13,6 +13,4 @@ public class Chapter45ApplicationTests {
 	public void contextLoads() {
 	}
 
-
-
 }
